@@ -1,0 +1,16 @@
+resource "google_compute_instance" "default" {
+  project      = "terraform4-282409"
+  name         = "terraform4"
+  machine_type = "f1-micro"
+  zone         = "us-central1-a"
+  boot_disk {
+    initialize_params {
+      image = "ubuntu-1604-xenial-v20200702"
+    }
+  }
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
